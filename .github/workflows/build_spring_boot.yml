@@ -1,1 +1,22 @@
-
+name: GitHub Actions Demo
+run-name: Try to build spring boot application with gradle.
+on: [push]
+  
+jobs:
+  Setting-JDK:
+    runs-on: ubuntu_latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-java@v4
+      with:
+          distribution: 'microsoft' # See 'Supported distributions' for available options
+          java-version: '21'
+          
+  Build-Spring-Boot-Application:
+    needs: Setting-JDK
+    runs-on: ubuntu_latest
+    steps:
+    - name: Use gradle pulgin build jar
+      run: ./SpringBoot/learning_spring_boot/gradlew bootJar
+    - name: list the generated jar
+      run: ls ./SpringBoot/learning_spring_boot/build/libs
