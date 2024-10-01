@@ -11,17 +11,8 @@ jobs:
       with:
           distribution: 'microsoft' # See 'Supported distributions' for available options
           java-version: '21'
-          
-  Build-Spring-Boot-Application:
-    needs: Setting-JDK
-    runs-on: ubuntu-latest
-    steps:
     - name: list the files
       run: ls ./
     - name: pwd
       run: pwd
-    #   working-directory: ./
-    # - name: Use gradle pulgin build jar
-    #   run: ./gradlew bootJar
-    # - name: list the generated jar
-    #   run: ls ./build/libs
+          
