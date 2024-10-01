@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./SpringBoot/learning_spring_boot
+        working-directory: /SpringBoot/learning_spring_boot
     steps:
     - name: list the files
       run: ls 
