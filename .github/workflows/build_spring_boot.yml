@@ -17,9 +17,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: list the files
-      run: ls 
-      working-directory: ./
-    - name: Use gradle pulgin build jar
-      run: ./gradlew bootJar
-    - name: list the generated jar
-      run: ls ./build/libs
+      run: ls ./
+    - name: pwd
+      run: pwd
+    #   working-directory: ./
+    # - name: Use gradle pulgin build jar
+    #   run: ./gradlew bootJar
+    # - name: list the generated jar
+    #   run: ls ./build/libs
