@@ -1,4 +1,4 @@
-name: GitHub Actions Demo
+name: GitHub Actions Build Spring Boot Application Demo
 run-name: Try to build spring boot application with gradle.
 on: [push]
   
@@ -15,10 +15,13 @@ jobs:
   Build-Spring-Boot-Application:
     needs: Setting-JDK
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./SpringBoot/learning_spring_boot
     steps:
     - name: list the files
-      run: ls
-    # - name: Use gradle pulgin build jar
-    #   run: ./SpringBoot/learning_spring_boot/gradlew bootJar
-    # - name: list the generated jar
-    #   run: ls ./SpringBoot/learning_spring_boot/build/libs
+      run: ls 
+    - name: Use gradle pulgin build jar
+      run: ./gradlew bootJar
+    - name: list the generated jar
+      run: ls ./build/libs
