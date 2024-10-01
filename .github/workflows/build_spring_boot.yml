@@ -11,8 +11,7 @@ jobs:
       with:
           distribution: 'microsoft' # See 'Supported distributions' for available options
           java-version: '21'
-    - name: list the files
-      run: ls ./
-    - name: pwd
-      run: pwd
+    - name: gradle build
+      run: ./gradlew bootJar
+      working-directory: ./SpringBoot/learning_spring_boot
           
