@@ -15,12 +15,10 @@ jobs:
   Build-Spring-Boot-Application:
     needs: Setting-JDK
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./SpringBoot/learning_spring_boot
     steps:
     - name: list the files
       run: ls 
+      working-directory: ./
     - name: Use gradle pulgin build jar
       run: ./gradlew bootJar
     - name: list the generated jar
